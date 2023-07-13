@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <!-- ***************** header ***************** -->
+    <img src="image/brand-logo.svg" width="100" alt="myshop logo" />
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="profile.html">Profile</a>
+      <a href="signup.html" id="selected">Signup</a>
+    </nav>
+    <hr />
+
+    <!-- ***************** signup form section ***************** -->
+    <section id="signup-section">
+      <div>
+        <form action="#">
+          <input type="text" placeholder="Name" required /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" name="email" id="email" required /><br />
+
+          <label for="password">Password:</label><br />
+          <input type="password" name="password" id="password" /><br />
+
+          <label for="pnumber">Phone number:</label><br />
+          <input type="tel" name="pnumber" id="pnumber" required /><br />
+
+          <!-- <label>Gender:</label>
+          <input type="radio" name="gender" id="male" value="Male" />
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" />
+          <label for="female" value="Female">Female</label><br /> -->
+
+          <label for="gender">Gender:</label>
+          <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option></select
+          ><br />
+
+          <label for="birthday">Birthday:</label><br />
+          <input type="date" name="birthday" id="birthday" /><br />
+
+          <label for="profile-pic">Add a profile picture:</label><br />
+          <input type="file" name="profile-pic" id="profile-pic" /><br />
+
+          <input type="checkbox" name="contract" id="contract" />
+          <label for="contract">Accept Terms of use</label><br />
+
+          <br /><button type="submit">Signup</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
