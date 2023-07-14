@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <title>Signup</title>
+
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- ***************** header ***************** -->
+    <img src="image/brand-logo.svg" width="100" alt="myshop logo" />
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="profile.html">Profile</a>
+      <a href="signup.html" id="selected">Signup</a>
+    </nav>
+
+    <!-- ***************** signup form ***************** -->
+    <div id="signup-section">
+      <form class="signup-form">
+        <label for="name">Full Name:</label><br />
+        <input class="input-field" type="text" id="name" required /><br />
+
+        <label for="email">Email:</label><br />
+        <input class="input-field" type="email" id="email" required /><br />
+
+        <label for="pass">Password:</label><br />
+        <input class="input-field" type="password" id="pass" required /><br />
+
+        <input type="checkbox" id="terms" />
+        <label for="terms">I accept terms and conditions</label>
+
+        <br />
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+  </body>
+</html>

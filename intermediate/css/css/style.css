@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* ---------------- navigation bar style ---------------- */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5% 0;
+  background-color: #f7f7f8;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 30px;
+}
+.main-nav a {
+  font-size: 20px;
+  color: #3d414a;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+.main-nav a:hover {
+  color: #5762d5;
+}
+#selected {
+  color: #5762d5;
+}
+
+/* ---------------- intro section ---------------- */
+.intro-container {
+  margin: 50px auto;
+  display: flex;
+  width: 1100px;
+}
+.intro-col {
+  width: 60%;
+}
+.intro-col h1 {
+  font-size: 28px;
+}
+.intro-col p {
+  color: #3d414a;
+}
+.member-btn {
+  background-color: #8338ec;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease-out;
+}
+.member-btn:hover {
+  background-color: #59299e;
+  cursor: pointer;
+}
+.intro-container video {
+  width: 40%;
+  border-radius: 20px;
+}
+
+/* ---------------- product category ---------------- */
+.category-section {
+  display: flex;
+  width: 1100px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-section a,
+.description a {
+  text-decoration: none;
+  color: #2e50e8;
+  transition: color 0.3s ease-out;
+}
+.category-section a:hover,
+.description a:hover {
+  color: #fe6d73;
+}
+
+/* ---------------- product card ---------------- */
+#product-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 1100px;
+  margin: 0 auto;
+}
+.product-card {
+  background-color: #e9e6f0;
+  border-radius: 20px;
+  width: 250px;
+}
+.product-img {
+  border-radius: 20px 20px 0 0;
+}
+.description {
+  padding: 10px 20px;
+  margin: 0 0 15px;
+}
+
+/* ---------------- footer section ---------------- */
+footer {
+  background-color: #2b2343;
+  height: 300px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
