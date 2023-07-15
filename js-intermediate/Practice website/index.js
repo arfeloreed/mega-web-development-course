@@ -170,3 +170,18 @@
 // findEven()
 
 // special array, if every even and odd index is even and odd number respectively
+var arr = [0, 1, 3, 3, 4, 5, 8]
+
+function isSpecialArray(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == i % 2) {
+            continue
+        }
+        else {
+            return false
+        }
+    }
+    return true
+}
+
+console.log(isSpecialArray(arr))
