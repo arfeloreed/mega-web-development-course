@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block description %}This is my description{% endblock description %}
+{% block robots %}index, follow{% endblock robots %}
+{% block keywords %}myshop{% endblock keywords %}
+
+{% block titlepage %}MyShop{% endblock titlepage %}
+
+{% block css %}{% static 'products/style.css' %}{% endblock css %}
+
+{% block body %}
+<!-- ***************** header ***************** -->
+{% include "includes/_nav.html" %}
+<!-- ***************** main content ***************** -->
+<section id="intro">
+  <div style="width: 50%;">
+    <h1>Best Clothing Quality</h1>   
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis porro quam fugiat accusantium ab velit tenetur perspiciatis autem, ipsa obcaecati at blanditiis? Unde, consectetur itaque nemo modi consequuntur obcaecati accusantium?</p>
+    <a onclick="hideNav()">Become a member</a>
+  </div>
+
+  <video controls>
+    <source src="{% static 'products/video/intro-video.mp4' %}">
+  </video>
+</section>
+
+<!-- ***************** Product card ***************** -->
+<div class="product-nav">
+  <h3>Suits</h3>
+  <a href="suits.html">View all suits</a>
+</div>
+
+<main id="products-intro">
+
+  {% for product in products %}
+  <div class="product-card">
+    <div class="review-con"><p>Reviews 4.8⭐</p></div>
+    <img src="{{ product.image.url }}" class="product-img">
+    <div style="padding:20px 25px">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      {% if product.brand %}
+        <p>{{ product.brand.name }}</p>
+        <p>{{ product.brand.address.city }}</p>
+      {% endif %}
+      <a href="{% url 'product_page' product.brand.name product.slug %}">View Product</a>
+    </div>
+  </div>
+  {% endfor %}
+
+</main>
+
+<!-- ***************** Footer ***************** -->
+<footer>
+  <h2>This is my footer.</h2>
+</footer>
+{% comment %} <script type="text/javascript" src="index.js" ></script> {% endcomment %}
+{% endblock body %}

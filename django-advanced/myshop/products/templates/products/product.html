@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block description %}{{ product.description }}{% endblock description %}
+{% block robots %}index, follow{% endblock robots %}
+{% block keywords %}signup, myshop{% endblock keywords %}
+
+{% block titlepage %}{{ product.title }}{% endblock titlepage %}
+
+{% block css %}{% static 'products/product.css' %}{% endblock css %}
+
+{% block body %}
+<!-- ***************** header ***************** -->
+  {% include "includes/_nav.html" %}
+<!-- ***************** product container ***************** -->
+  <main>
+    <section id="product-con">
+      <img src="{{product.image.url}}" alt="product-image">
+      <div>
+        <h1>{{product.title}}</h1>
+        <p>{{product.brand.name}}</p>
+        <p>{{product.description}}</p>
+        <button type="button">Add to cart</button>
+      </div>
+    </section>
+<!-- ***************** feedback container ***************** -->
+    <section id="feedback">
+      <h3>Customer's feedbacks:</h3>
+      {% if messages %}
+        {% for message in messages %}
+          <p style="color:green;">{{message}}</p>
+        {% endfor %}
+      {% endif %}
+
+      <div>
+        <form method="POST">
+          {% csrf_token %}
+
+          {% for field in form %}
+            {{field.label_tag}}
+            {{field}}
+            {% if field.help_text %}
+              {{field.help_text}}
+            {% endif %}
+            {% for error in field.errors %}
+              <p style="color:red;">{{error}}</p><br>
+            {% endfor %}
+          {% endfor %}
+
+          {% comment %} {{form.name.label_tag}}<br>
+          {{form.name}}<br>
+          {% for error in form.name.errors %}
+            <p style="color: red;">{{error}}</p>
+          {% endfor %}
+
+          {{form.rating.label_tag}}<br>
+          {{form.rating}}<br>
+          {% for error in form.rating.errors %}
+            <p style="color: red;">{{error}}</p>
+          {% endfor %} {% endcomment %}
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+<!-- ***************** reviews container ***************** -->
+    <section id="reviews-con">
+      {% for review in reviews %}
+        <div>
+          <h3>{{review.name}} - {% comment %}{{review.rating}}{% endcomment %}
+            {% if review.rating == 5 %} ⭐⭐⭐⭐⭐
+            {% elif review.rating == 4 %} ⭐⭐⭐⭐
+            {% elif review.rating == 3 %} ⭐⭐⭐
+            {% elif review.rating == 2 %} ⭐⭐
+            {% elif review.rating == 1 %} ⭐
+            {% endif %}
+          </h3>
+          <p>{{review.text}}</p>
+        </div>
+      {% endfor %}
+    </section>
+
+  </main>
+
+
+{% endblock body %}
